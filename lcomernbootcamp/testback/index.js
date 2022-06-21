@@ -17,7 +17,7 @@ const isAdmin = (req, res, next) => {
   next();
 };
 
-app.get("/admin", isAdmin, admin);
+app.get("/admin", isloggedIn, isAdmin, admin);
 
 app.get("/login", (req, res) => {
   return res.send("You are visiting login route");
